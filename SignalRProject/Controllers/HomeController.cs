@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SignalRProject.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.SignalR;
 
 namespace SignalRProject.Controllers
 {
