@@ -1,118 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Application</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        #sendButton {
-            background-color: #007bff;
-            color: white;
-            font-weight: bold;
-            border: none;
-            padding: 10px 20px;
-            transition: all 0.3s ease;
-        }
-
-        #sendButton:hover {
-            background-color: #0056b3;
-        }
-
-
-        .messages-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 20px;
-            max-width: 600px;
-        }
-
-        .message {
-            padding: 10px 15px;
-            border-radius: 15px;
-            max-width: 70%;
-            font-size: 14px;
-            word-wrap: break-word;
-        }
-
-        .sent {
-            align-self: flex-end;
-            background-color: #007bff; /* Bootstrap Primary */
-            color: white;
-        }
-
-        .received {
-            align-self: flex-start;
-            background-color: #e9ecef; /* Bootstrap Light Gray */
-            color: black;
-        }
-    </style>
-
-</head>
-
-<body>
-    <div class="container shadow p-4 bg-white rounded">
-        <!-- Header -->
-        <div class="text-center mb-4">
-            <h2 class="text-primary">Chat Application</h2>
-            <p class="text-muted">Send and receive messages seamlessly!</p>
-        </div>
-
-        <!-- Input Section -->
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="input-group">
-                    <span class="input-group-text bg-primary text-white" id="userLabel">User</span>
-                    <input type="text" id="userInput" class="form-control" placeholder="Enter username" aria-label="User">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text bg-primary text-white" id="messageLabel">Message</span>
-                    <input type="text" id="messageInput" class="form-control" placeholder="Enter your message"
-                        aria-label="Message">
-                </div>
-                <div class="text-center">
-                    <button id="sendButton" class="btn btn-primary">Send Message</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="row my-4">
-            <div class="col-12">
-                <hr />
-            </div>
-        </div>
-
-        <!-- Message List -->
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div id="messagesList" class="messages-container"></div>
-
-            </div>
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="messageInput" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
 
-     <script src="~/js/signalr/dist/browser/signalr.js"></script>
-    <script src="~/js/clientHub.js"></script>
-</body>
-
-</html>
-
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/clientHub.js"></script>

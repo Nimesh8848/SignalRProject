@@ -19,6 +19,10 @@ namespace SignalRProject.Controllers
             return View();
         }
 
+        public IActionResult ShowConnectedUsers()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
